@@ -1,0 +1,27 @@
+﻿<UserControl xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:nineGrid="clr-namespace:Microsoft.Expression.Controls.Fxg;assembly=Microsoft.Expression.Controls.Fxg" xmlns:local="clr-namespace:FundSelectorTool.Resources.NavButtons.ComplianceCheckButton;assembly=FundSelectorTool" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Viewbox UseLayoutRounding="false">
+    <Canvas Width="218" Height="53">
+      <Canvas Width="200" Height="44" Canvas.Left="18">
+        <Canvas Width="200" Height="44">
+          <Image Source="/ComplianceCheckButton.assets/Image_0.png" Width="200" Height="44" Stretch="Fill" />
+          <Image Canvas.Top="6" Source="/ComplianceCheckButton.assets/Image_1.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="56" Canvas.Top="20" Source="/ComplianceCheckButton.assets/Image_2.png" Width="90" Height="10" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Width="218" Height="53">
+        <Canvas Width="218" Height="53">
+          <Image Canvas.Left="18" Source="/ComplianceCheckButton.assets/Image_3.png" Width="200" Height="44" Stretch="Fill" />
+          <Image Canvas.Top="4" Source="/ComplianceCheckButton.assets/Image_4.png" Width="211" Height="49" Stretch="Fill" />
+          <Image Canvas.Left="18" Canvas.Top="6" Source="/ComplianceCheckButton.assets/Image_5.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="74" Canvas.Top="20" Source="/ComplianceCheckButton.assets/Image_6.png" Width="90" Height="10" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Canvas.Left="109" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+      <Canvas Canvas.Left="109" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>

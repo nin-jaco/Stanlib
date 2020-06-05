@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FundSelectorButtonStyle"
+           TargetType="Button">
+        <Setter Property="Foreground"
+                Value="#FFFFFFFF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.3"
+                                                         To="1"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Storyboard.TargetName="FocusVisualElement" />
+                                        <DoubleAnimation Duration="0:0:0.3"
+                                                         To="1"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Storyboard.TargetName="ButtonTextOver" />
+                                        <ColorAnimation Duration="0"
+                                                        To="#FFFFFFFF"
+                                                        Storyboard.TargetProperty="Color"
+                                                        Storyboard.TargetName="ButtonTextColor" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <Canvas x:Name="FocusVisualElement"
+                                    Width="306"
+                                    Height="206"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Center"
+                                    Opacity="0"
+                                    Margin="5,0,0,0">
+                                <Image Source="/BrokerTools;component/Resources/Images/BlueGlow.png"
+                                       Stretch="Fill" />
+                            </Canvas>
+                            <Canvas Width="147"
+                                    Height="205"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,75,0,0"
+                                    Cursor="Hand">
+                                <Image Source="/BrokerTools;component/Resources/Images/FundSelector.png"
+                                       Stretch="Fill" />
+                            </Canvas>
+                            <Canvas x:Name="ButtonTextOver"
+                                    Width="139"
+                                    Height="52"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Center"
+                                    Opacity="0">
+                                <Image Source="/BrokerTools;component/Resources/Images/ToolNameOver.png"
+                                       Stretch="Fill" />
+                            </Canvas>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                       VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="Bold"
+                                       Margin="0,0,0,15">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="#FF35646E"
+                                                     x:Name="ButtonTextColor" />
+                                </TextBlock.Foreground>
+                            </TextBlock>
+
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

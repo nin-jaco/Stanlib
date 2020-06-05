@@ -1,0 +1,273 @@
+﻿<UserControl x:Class="BrokerTools.FundSelector.Views.FundsAndClientDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local_controls="clr-namespace:BrokerTools.FundSelector.UserControls;assembly=BrokerTools.FundSelector"
+             xmlns:shared_controls="clr-namespace:BrokerTools.SharedUIResources.Controls;assembly=BrokerTools.SharedUIResources"
+             xmlns:behaviours="clr-namespace:BrokerTools.SharedUIResources.Behaviour;assembly=BrokerTools.SharedUIResources"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/BrokerTools.FundSelector;component/Resources/Base.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <Style x:Key="LightTitleStyle"
+                   TargetType="TextBlock"
+                   BasedOn="{StaticResource MediumBlueLabelStyle}">
+                <Setter Property="FontSize"
+                        Value="35" />
+            </Style>
+            <Style x:Key="DarkTitleStyle"
+                   TargetType="TextBlock"
+                   BasedOn="{StaticResource DarkBlueLabelStyle}">
+                <Setter Property="FontSize"
+                        Value="35" />
+            </Style>
+            <Style x:Key="SubTitleStyle"
+                   BasedOn="{StaticResource LightBlueLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="14" />
+                <Setter Property="FontWeight"
+                        Value="Normal" />
+            </Style>
+            <Style x:Key="ColumnTitleStyle"
+                   BasedOn="{StaticResource LightBlueLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="19" />
+                <Setter Property="Margin"
+                        Value="0,0,8,0" />
+            </Style>
+
+            <Style TargetType="sdk:AutoCompleteBox"
+                   BasedOn="{StaticResource DefaultAutoCompleteBox}">
+                <Setter Property="Margin"
+                        Value="0,0,0,10" />
+            </Style>
+
+            <Style TargetType="TextBox"
+                   BasedOn="{StaticResource DefaultTextBoxStyle}">
+                <Setter Property="Margin"
+                        Value="0,0,0,10" />
+            </Style>
+
+            <Style TargetType="ComboBox"
+                   BasedOn="{StaticResource DefaultComboBoxStyle}">
+                <Setter Property="Margin"
+                        Value="0,0,0,10" />
+            </Style>
+
+            <SolidColorBrush x:Key="WatermarkBrush"
+                             Color="#FF4A4A4A" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"
+          DataContext="{Binding Models.SharedViewModel, Source={StaticResource ViewModelController}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border CornerRadius="0"
+                BorderBrush="#FF000000"
+                BorderThickness="1,0,1,0"
+                Background="#FFFFFFFF">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush AlignmentY="Bottom"
+                                AlignmentX="Left"
+                                ImageSource="../Resources/Images/FundsAndClientsDetailsBG.jpg"
+                                Stretch="None" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <local_controls:Breadcrumb />
+                <Grid Grid.Row="1"
+                      Margin="45,30,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="LET'S GET"
+                                   Style="{StaticResource LightTitleStyle}"
+                                   Margin="0,0,5,0" />
+                        <TextBlock Text="STARTED"
+                                   Style="{StaticResource DarkTitleStyle}" />
+                    </StackPanel>
+                    <TextBlock Grid.Row="1"
+                               Style="{StaticResource SubTitleStyle}"
+                               Text="Fill in the required fields below." />
+                </Grid>
+                <Grid Grid.Row="2"
+                      Margin="200,0,0,25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--The Advisor-->
+                    <Grid>
+                        <Border BorderBrush="#FFB2B2B2"
+                                BorderThickness="0,0,1,0">
+                            <Grid Margin="30,20,30,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="0,0,0,20">
+                                    <TextBlock Text="The Advisor"
+                                               Style="{StaticResource ColumnTitleStyle}" />
+                                    <Image Visibility="Collapsed"
+                                           Stretch="None"
+                                           Source="../Resources/Images/GreenCheck.png" />
+                                </StackPanel>
+                                <sdk:AutoCompleteBox Grid.Row="1"
+                                                     ItemsSource="{Binding Advisors, Mode=OneWay}"
+                                                     SelectedItem="{Binding SelectedAdvisor, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviours:WatermarkAutoComplete Text="Advisor..."
+                                                                          Foreground="{StaticResource WatermarkBrush}" />
+                                    </i:Interaction.Behaviors>
+                                </sdk:AutoCompleteBox>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <!--The Investor-->
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="#FFB2B2B2"
+                                BorderThickness="0,0,1,0">
+                            <Grid Margin="30,20,30,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="0,0,0,20">
+                                    <TextBlock Text="The Investor"
+                                               Style="{StaticResource ColumnTitleStyle}" />
+                                    <Image Visibility="Collapsed"
+                                           Stretch="None"
+                                           Source="../Resources/Images/GreenCheck.png" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1"
+                                            Orientation="Vertical">
+                                    <!--TEXTBOX: Investor Name-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="Investor Name..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--TEXTBOX: Portfolio Number-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="Portfolio Number..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--COMBOBOX: Client Risk Profile-->
+                                    <ComboBox Tag="Client Risk Profile..."
+                                              Style="{StaticResource DefaultComboBoxStyle}" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <!--The Investment-->
+                    <Grid Grid.Column="2">
+                        <Border BorderBrush="#FFB2B2B2"
+                                BorderThickness="0,0,1,0">
+                            <Grid Margin="30,20,30,20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="The Investment"
+                                           Style="{StaticResource ColumnTitleStyle}"
+                                           Margin="0,0,0,20" />
+                                <StackPanel Grid.Row="1"
+                                            Orientation="Vertical">
+                                    <!--COMBOX: Investment Term-->
+                                    <ComboBox Tag="Investment Term..." />
+                                    <!--TEXTBOX: CGT Exemption-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="CGT Exemption..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--TEXTBOX: Marginal Tax Rate-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="Marginal Tax Rate..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--TEXTBOX: CGT Inclusion Rate-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="CGT Inclusion Rate..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--COMBOX: Type of Investment-->
+                                    <ComboBox Tag="Type of Investment..." />
+                                    <!--TEXTBOX: Investment Amount-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="Investment Amount..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                    <!--TEXTBOX: Interest Exemption-->
+                                    <TextBox>
+                                        <i:Interaction.Behaviors>
+                                            <behaviours:Watermark Text="Interest Exemption..."
+                                                                  Foreground="{StaticResource WatermarkBrush}" />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1"
+                CornerRadius="0,0,5,5"
+                BorderBrush="#FF000000"
+                Background="#FFE2E2E2"
+                BorderThickness="1,0,1,1"
+                Padding="0,4,40,4"
+                VerticalAlignment="Bottom">
+            <Grid>
+                <Button x:Name="PreviousStepButton"
+                        Style="{StaticResource BackButtonStyle}"
+                        Width="92"
+                        Height="34"
+                        Content="BACK"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,100,0" />
+                <Button x:Name="NextStepButton"
+                        Style="{StaticResource NextButtonStyle}"
+                        Width="92"
+                        Height="34"
+                        Content="NEXT"
+                        HorizontalAlignment="Right"
+                        Margin="0" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

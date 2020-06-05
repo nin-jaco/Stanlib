@@ -1,0 +1,16 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:AssetAlloctionButton="clr-namespace:FundSelectorTool.Resources.NavButtons.AssetAlloctionButton" x:Class="FundSelectorTool.UserControls.TopNavigation"
+    mc:Ignorable="d"
+    d:DesignHeight="53" d:DesignWidth="850">
+    <Grid x:Name="LayoutRoot" Style="{StaticResource TopNavigation}">
+    	<Button x:Name="CashFlowAnalysisButton" Content="Button"  Style="{StaticResource CashFlowAnalysisButton}" HorizontalAlignment="Right" Width="190" Margin="0,0,-6,0" />
+        <Button x:Name="RiskAssessorButton" Content="Button"  Style="{StaticResource RiskAssessorButton}" Margin="0,0,159,0" HorizontalAlignment="Right" Width="218" />
+        <Button x:Name="ComplianceCheckButton" Content="Button"  Style="{StaticResource ComplianceCheckButton}" Margin="307,0,325,0" HorizontalAlignment="Stretch" Width="Auto" />
+        <Button x:Name="AssetAllocationButton" Content="Button"  Style="{StaticResource AssetAllocationButton}" Margin="140,0,0,0" />
+    	<Button x:Name="LetsGetStartedButton" Content="Button"  Style="{StaticResource LetsGetStartedButton}" />
+    </Grid>
+</UserControl>

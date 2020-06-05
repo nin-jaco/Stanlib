@@ -1,0 +1,5 @@
+C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\BrokerTools.Web\bin\BrokerTools.Web.dll
+C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\BrokerTools.Web\bin\BrokerTools.Web.pdb
+C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\BrokerTools.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\BrokerTools.Web\obj\Debug\BrokerTools.Web.dll
+C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\BrokerTools.Web\obj\Debug\BrokerTools.Web.pdb

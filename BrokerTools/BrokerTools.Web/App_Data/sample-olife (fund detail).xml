@@ -1,0 +1,337 @@
+<OLifE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ACORD.org/Standards/Life/2">
+  <!-- SAMPLE XML FOR FUND DETAIL -->
+  <InvestProduct id="STLB_InvestmentProduct_4">
+    <InvestProductSysKey>Silica_FundCode{AID}</InvestProductSysKey>
+    <ProductSymbol>LIIA</ProductSymbol>
+    <ProductCode>UT</ProductCode>
+    <FullName>STANLIB Industrial Fund A</FullName>
+    <CarrierName>ABSA BANK AS TRUSTEE FOR STANLIB CIS</CarrierName>
+    <SaleEffectiveDate>2000-07-01</SaleEffectiveDate>
+    <FundFamilyName>STANLIB Industrial</FundFamilyName>
+    <ShareClass tc="1">OLI_SHARECLASS_ASHARE</ShareClass>
+    <Fee id="STLB_Fee_6">
+      <FeeType tc="609">OLI_OTHER</FeeType>
+      <Description>Maximum Initial Manco Fee Percentage</Description>
+      <FeePct>2</FeePct>
+    </Fee>
+    <Fee id="STLB_Fee_7">
+      <FeeType tc="609">OLI_OTHER</FeeType>
+      <Description>Maximum Initial Advisor Fee Percentage</Description>
+      <FeePct>3</FeePct>
+    </Fee>
+    <InvestProductInfo id="STLB_InvestmentProductInfo_5">
+      <MinDepositAmt>500</MinDepositAmt>
+      <MinAmt>5000</MinAmt>
+    </InvestProductInfo>
+    <OLifEExtension VendorCode="STANLIB">
+      <SectorAllocation>
+        <MarketSector>Basic Materials</MarketSector>
+        <Local>21.993</Local>
+        <JSECode>INECD</JSECode>
+        <Total>908437990</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Consumer Goods</MarketSector>
+        <Local>23.1164</Local>
+        <JSECode>INECD</JSECode>
+        <Total>954844748</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Consumer Services</MarketSector>
+        <Local>5.4759</Local>
+        <JSECode>INECD</JSECode>
+        <Total>226187805</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Financials</MarketSector>
+        <Local>9.9932</Local>
+        <JSECode>INECD</JSECode>
+        <Total>412743117</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>General Equity</MarketSector>
+        <Local>1.1015</Local>
+        <JSECode>INECD</JSECode>
+        <Total>45496743</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Industrials</MarketSector>
+        <Local>10.6929</Local>
+        <JSECode>INECD</JSECode>
+        <Total>441683401</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Liquid Assets</MarketSector>
+        <Local>6.7557</Local>
+        <JSECode>INECD</JSECode>
+        <Total>279049418</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Oil &amp; Gas</MarketSector>
+        <Local>10.4223</Local>
+        <JSECode>INECD</JSECode>
+        <Total>430501587</Total>
+      </SectorAllocation>
+      <SectorAllocation>
+        <MarketSector>Telecommunications</MarketSector>
+        <Local>10.45</Local>
+        <JSECode>INECD</JSECode>
+        <Total>431647601</Total>
+      </SectorAllocation>
+    </OLifEExtension>
+    <OLifEExtension VendorCode="STANLIB">
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-05-31T00:00:00</Date>
+        <Performance>0.0273</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-06-30T00:00:00</Date>
+        <Performance>-0.0965</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-07-31T00:00:00</Date>
+        <Performance>0.0296</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-08-31T00:00:00</Date>
+        <Performance>0.059500000000000004</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-09-30T00:00:00</Date>
+        <Performance>-0.0791</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-10-31T00:00:00</Date>
+        <Performance>-0.0806</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-11-30T00:00:00</Date>
+        <Performance>-0.0729</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2008-12-31T00:00:00</Date>
+        <Performance>0.0347</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-01-31T00:00:00</Date>
+        <Performance>-0.0056999999999999993</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-02-28T00:00:00</Date>
+        <Performance>-0.038599999999999995</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-03-31T00:00:00</Date>
+        <Performance>0.0296</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-04-30T00:00:00</Date>
+        <Performance>0.0545</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-05-31T00:00:00</Date>
+        <Performance>0.0417</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-06-30T00:00:00</Date>
+        <Performance>0.0125</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-07-31T00:00:00</Date>
+        <Performance>0.0756</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-08-31T00:00:00</Date>
+        <Performance>0.0344</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-09-30T00:00:00</Date>
+        <Performance>0.0461</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-10-31T00:00:00</Date>
+        <Performance>0.042699999999999995</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-11-30T00:00:00</Date>
+        <Performance>-0.0332</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2009-12-31T00:00:00</Date>
+        <Performance>0.047</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-01-31T00:00:00</Date>
+        <Performance>-0.0192</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-02-28T00:00:00</Date>
+        <Performance>0.0209</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-03-31T00:00:00</Date>
+        <Performance>0.0603</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-04-30T00:00:00</Date>
+        <Performance>0.0011</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-05-31T00:00:00</Date>
+        <Performance>-0.025</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-06-30T00:00:00</Date>
+        <Performance>-0.0098999999999999991</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-07-31T00:00:00</Date>
+        <Performance>0.0644</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-08-31T00:00:00</Date>
+        <Performance>-0.0087</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-09-30T00:00:00</Date>
+        <Performance>0.1039</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-10-31T00:00:00</Date>
+        <Performance>0.0109</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-11-30T00:00:00</Date>
+        <Performance>-0.0024</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2010-12-31T00:00:00</Date>
+        <Performance>0.0326</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2011-01-31T00:00:00</Date>
+        <Performance>-0.052300000000000006</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2011-02-28T00:00:00</Date>
+        <Performance>0.0016</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2011-03-31T00:00:00</Date>
+        <Performance>0.0009</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+      <FundPrice>
+        <Name>STANLIB Industrial A</Name>
+        <JSECode>LIIA</JSECode>
+        <Date>2011-04-30T00:00:00</Date>
+        <Performance>0.0222</Performance>
+        <Type>Price</Type>
+      </FundPrice>
+    </OLifEExtension>
+  </InvestProduct>
+</OLifE> 

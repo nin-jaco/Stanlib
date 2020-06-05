@@ -1,0 +1,3 @@
+XAML:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\RiskAssessorButton.fxg.config\master76b60546_btnRiskAssessor.xaml
+Code:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\RiskAssessorButton.fxg.config\master76b60546_btnRiskAssessor.g.cs
+Code:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\RiskAssessorButton.fxg.config\RiskAssessorButtonAssemblyInfo.cs

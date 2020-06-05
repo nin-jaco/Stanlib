@@ -1,0 +1,204 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+
+    <Style x:Key="SubTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource DarkBlueLabelStyle}">
+           <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="PortfolioDetailsPage" TargetType="Grid">
+        <Setter Property="Width" Value="850" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+
+    <Style x:Key="Heading3ALightBlue" TargetType="TextBlock" >
+        <Setter Property="Foreground" Value="#00a8b4" />
+        <Setter Property="FontFamily" Value="Trebuchet MS" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="35" />
+        <Setter Property="FontStretch" Value="Expanded" />
+        <Setter Property="Margin" Value="46,30,0,0"/>
+    </Style>
+
+    <Style x:Key="Heading3ADarkBlue" TargetType="TextBlock" >
+        <Setter Property="Foreground" Value="#1d5062" />
+        <Setter Property="FontFamily" Value="Trebuchet MS" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="35" />
+        <Setter Property="FontStretch" Value="Expanded" />
+        <Setter Property="Margin" Value="235,76,0,0" />
+    </Style>
+
+    <Style x:Key="Heading5" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#1d5062" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
+    <Style x:Key="SmallTextGreen" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="#A3D10D" />
+    </Style>
+
+    <Style x:Name="AggresiveRatingImage" TargetType="Image">
+        <Setter Property="Margin" Value="0,-3,0,0"/>
+        <Setter Property="Width" Value="27" />
+        <Setter Property="Height" Value="27" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <!-- Data Grids -->
+    <Style x:Key="PortfolioDetailsGridHeader" TargetType="Grid">
+        <Setter Property="Height" Value="76">
+        </Setter>
+     
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/PortfolioDetailsGridBG3.png" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PortfolioDetailsDataGridStyle" TargetType="sdk:DataGrid">      
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Width" Value="720" />
+        <Setter Property="Height" Value="200"/>
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
+        <Setter Property="ScrollViewer.Style">
+            <Setter.Value>
+                <Style x:Name="ScrollViewerStyle" TargetType="ScrollViewer">
+                    <Setter Property="Width" Value="26" />
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="-0.02,0.5" EndPoint="1.02,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FF585858" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserResizeColumns" Value="False" />
+        <Setter Property="CanUserSortColumns" Value="False" />
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="RowBackground" Value="Transparent" />
+        <Setter Property="AlternatingRowBackground">
+            <Setter.Value>
+                <SolidColorBrush Opacity="50" Color="#EDEDED" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="RowHeight" Value="25" />
+    </Style>
+
+    <Style x:Key="PortfolioDetailsGridTotal" TargetType="StackPanel">
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/PortfolioDetailsGridTotalBG.png" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GridComboBoxCell" TargetType="ComboBox">
+        <Setter Property="Height" Value="24" />
+    </Style>
+
+    <Style x:Key="GridTextboxCell" TargetType="TextBox">
+        <Setter Property="Width" Value="61" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="BorderThickness" Value="0" />
+        <!--<Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/cellColumn61.png" />
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <!--<Setter Property="SelectionForeground" Value="{x:Null}"/>
+        <Setter Property="SelectionBackground" Value="{x:Null}"/>-->
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#FF4A4A4A"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+
+    <Style x:Key="GridTextBlockCell" TargetType="TextBlock">
+        <Setter Property="Width" Value="61" />
+        <Setter Property="Height" Value="25" />
+    </Style>
+
+
+    <Style x:Key="GridTextBoxBorder" TargetType="Border">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/cellColumn61.png" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GridTextBlockBorder" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/cellColumn61.png" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GridTextBlockLargerBorder" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="Fill" ImageSource="/BrokerTools.FundSelector;component/Resources/Styles/PortfolioDetails/Images/cellColumn100.png" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="DataGridFooterLeftTextStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#7FCACF" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style x:Key="DataGridFooterMiddleTextStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Width" Value="62" />
+    </Style>
+
+    <Style x:Key="DataGridFooterRightTextStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Width" Value="107" />
+    </Style>
+
+</ResourceDictionary>

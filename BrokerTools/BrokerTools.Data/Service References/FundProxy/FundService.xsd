@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ACORD.org/Standards/Life/2" elementFormDefault="qualified" targetNamespace="http://ACORD.org/Standards/Life/2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="OLife">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" name="Relation" type="tns:Relation" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="tns:Currency" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Holding" type="tns:Holding" />
+        <xs:element minOccurs="0" maxOccurs="1" name="InvestProduct" type="tns:InvestmentProduct" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Party" type="tns:Party" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OLifEExtension" type="tns:OLifEExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Relation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OriginatingObjectType" type="tns:OLifeEnumOfRelatedObjectTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RelatedObjectType" type="tns:OLifeEnumOfRelatedObjectTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RelationRoleCode" type="tns:OLifeEnumOfRelationshipTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RelationDescription" nillable="true" type="tns:RelationDescriptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InterestPercent" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BeneficiaryDesignation" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Dependent" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimaryAddressID" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimaryPhoneToCallID" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimaryEmailID" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="RelatedObjectID" type="xs:string" />
+        <xs:attribute name="OriginatingObjectID" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeRoot" abstract="true">
+    <xs:attribute name="id" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Banking">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BankingSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CreditDebitType" type="tns:OLifeEnumOfCreditDebitTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BankAcctType" type="tns:OLifeEnumOfBankAccountTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CreditCardType" type="tns:OLifeEnumOfCreditCardTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CreditCardExpDate" type="xs:gYearMonth" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RoutingNum" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcctHolderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BankName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BankBranchName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CardVerificationNum" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SurrenderChargeAmt" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfCreditDebitTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfBankAccountTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfCreditCardTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SubAccount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SubAccountSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductSymbol" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductFullName" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ValuationDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UnitCount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UnitValue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PricingDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TotalCost" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TotalValue" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AllocationPercentage" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PurchaseDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AvailableFunds" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PortfolioFullName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Fees" type="tns:ArrayOfFee" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TotalFees" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Transactions" type="tns:ArrayOfTransaction" />
+          <xs:element minOccurs="0" maxOccurs="1" default="OLI_CURRENCY_ZAR" name="CurrencyTypeCode" type="tns:CurrencyTypes" />
+        </xs:sequence>
+        <xs:attribute name="ProductID" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfFee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fee" nillable="true" type="tns:Fee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fee">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="SystemKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FeeType" type="tns:OLifeEnumOfFeeType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FeeAmt" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FeePct" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfFeeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SystemKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UnitCount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UnitValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InvestmentAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="tns:TransactionType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubAccount" type="tns:SubAccount" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Fees" type="tns:ArrayOfFee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Fee" />
+      <xs:enumeration value="Reversal" />
+      <xs:enumeration value="Cancellation" />
+      <xs:enumeration value="Redemption" />
+      <xs:enumeration value="Interest" />
+      <xs:enumeration value="Switch" />
+      <xs:enumeration value="ManualDebit" />
+      <xs:enumeration value="Distribution" />
+      <xs:enumeration value="BalanceCarriedForward" />
+      <xs:enumeration value="Creation" />
+      <xs:enumeration value="Liquidation" />
+      <xs:enumeration value="TemporaryPurchase" />
+      <xs:enumeration value="Transfer" />
+      <xs:enumeration value="Outflows" />
+      <xs:enumeration value="StockNettFlow" />
+      <xs:enumeration value="StockCreation" />
+      <xs:enumeration value="Commission" />
+      <xs:enumeration value="WealthManagementBudget" />
+      <xs:enumeration value="ManualCredit" />
+      <xs:enumeration value="Inflows" />
+      <xs:enumeration value="StockLiquidation" />
+      <xs:enumeration value="Tax" />
+      <xs:enumeration value="Purchase" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OLI_UNKNOWN" />
+      <xs:enumeration value="OLI_CURRENCY_ZAR" />
+      <xs:enumeration value="OLI_CURRENCY_AUD" />
+      <xs:enumeration value="OLI_CURRENCY_BRL" />
+      <xs:enumeration value="OLI_CURRENCY_BWP" />
+      <xs:enumeration value="OLI_CURRENCY_CAD" />
+      <xs:enumeration value="OLI_CURRENCY_CHF" />
+      <xs:enumeration value="OLI_CURRENCY_EUR" />
+      <xs:enumeration value="OLI_CURRENCY_GBP" />
+      <xs:enumeration value="OLI_CURRENCY_HKD" />
+      <xs:enumeration value="OLI_CURRENCY_JPY" />
+      <xs:enumeration value="OLI_CURRENCY_LSL" />
+      <xs:enumeration value="OLI_CURRENCY_NAD" />
+      <xs:enumeration value="OLI_CURRENCY_SEK" />
+      <xs:enumeration value="OLI_CURRENCY_SZL" />
+      <xs:enumeration value="OLI_CURRENCY_USD" />
+      <xs:enumeration value="OLI_CURRENCY_NZD" />
+      <xs:enumeration value="OLI_CURRENCY_MAD" />
+      <xs:enumeration value="OLI_CURRENCY_EGP" />
+      <xs:enumeration value="OLI_CURRENCY_MRU" />
+      <xs:enumeration value="OLI_CURRENCY_GHC" />
+      <xs:enumeration value="OLI_CURRENCY_KES" />
+      <xs:enumeration value="OLI_CURRENCY_ZMK" />
+      <xs:enumeration value="OLI_CURRENCY_NGN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Investment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InvestmentSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InvestmentKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InvestType" type="tns:OLifeEnumOfInvestmentTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="QualPlanType" type="tns:OLifeEnumOfQualificationPlanTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InvestmentProductName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AcctNum" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CarrierPartyId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AccountValue" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SubAccounts" type="tns:ArrayOfSubAccount" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Fees" type="tns:ArrayOfFee" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfInvestmentTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfQualificationPlanTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSubAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubAccount" nillable="true" type="tns:SubAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Carrier">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EMailAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EMailAddressSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EMailType" type="tns:OLifeEnumOfEmailTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddrLine" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrefEMailAddr" type="tns:BoolType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfEmailTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="BoolType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Phone">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PhoneTypeCode" type="tns:OLifeEnumOfNumberTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CountryCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AreaCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DialNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfNumberTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressType" type="tns:OLifeEnumOfAddressTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Line1" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Line2" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Line3" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Line4" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Line5" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressState" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Zip" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressCountry" type="tns:OLifeEnumOfCountryTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DateCreated" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfAddressTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfCountryTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Attachment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AttachmentData" type="tns:AttachmentData" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AttachmentType" type="tns:OLifeEnumOfAttachmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MimeTypeTC" type="tns:OLifeEnumOfMimeType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TransferEncodingTypeTC" type="tns:OLifeEnumOfTransferEncodingType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ImageType" type="tns:OLifeEnumOfImageType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AttachmentLocation" type="tns:OLifeEnumOfAttachmentLocation" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AttachmentReference" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FileName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AttachmentData">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfAttachmentType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfMimeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfTransferEncodingType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfImageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfAttachmentLocation">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Holding">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HoldingSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="HoldingName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="HoldingStatus" type="tns:OLifeEnumOfHoldingStatuses" />
+          <xs:element minOccurs="0" maxOccurs="1" name="HoldingTypeCode" type="tns:OLifeEnumOfHoldingTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Investment" type="tns:Investment" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Banking" type="tns:Banking" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrencyTypeCode" type="tns:OLifeEnumOfCurrencyTypes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfHoldingStatuses">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfHoldingTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfCurrencyTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Party">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PartyTypeCode" type="tns:OLifeEnumOfPartyTypes" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PartySysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DisplayName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FullName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ResidenceCountry" type="tns:OLifeEnumOfCountryTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IDReferenceNo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IDReferenceType" type="tns:OLifeEnumOfIdentityTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Person" type="tns:Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Organization" type="tns:Organization" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" type="tns:Address" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Phone" type="tns:Phone" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EMailAddress" type="tns:EMailAddress" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Carrier" type="tns:Carrier" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfPartyTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfIdentityTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MiddleName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Initials" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Gender" type="tns:OLifeEnumOfGenderTypes" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="tns:OLifeEnumOfMaritalStatusTypes" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BirthDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EducationType" nillable="true" type="tns:EducationLevelTypes" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OLifEExtension" type="tns:OLifEExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfGenderTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfMaritalStatusTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EducationLevelTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OLI_EDULEVEL_1YRCOLL" />
+      <xs:enumeration value="OLI_EDULEVEL_2YRCOLL" />
+      <xs:enumeration value="OLI_EDULEVEL_GRAD" />
+      <xs:enumeration value="OLI_EDULEVEL_3YRCOLL" />
+      <xs:enumeration value="OLI_EDULEVEL_4YRCOLL" />
+      <xs:enumeration value="OLI_EDULEVEL_BA" />
+      <xs:enumeration value="OLI_EDULEVEL_BS" />
+      <xs:enumeration value="OLI_EDULEVEL_DRDENT" />
+      <xs:enumeration value="OLI_EDULEVEL_DRMED" />
+      <xs:enumeration value="OLI_EDULEVEL_DR" />
+      <xs:enumeration value="OLI_EDULEVEL_GENED" />
+      <xs:enumeration value="OLI_EDULEVEL_HS" />
+      <xs:enumeration value="OLI_EDULEVEL_MASTERS" />
+      <xs:enumeration value="OLI_EDULEVEL_MATRIC" />
+      <xs:enumeration value="OLI_EDULEVEL_POSTGRAD" />
+      <xs:enumeration value="OLI_EDULEVEL_STD7" />
+      <xs:enumeration value="OLI_OTHER" />
+      <xs:enumeration value="OLI_UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OLifEExtension">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" name="Identification" type="tns:Identification" />
+        <xs:element minOccurs="0" maxOccurs="1" name="FundPrice" type="tns:FundPrice" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Confirmation" type="tns:Confirmation" />
+        <xs:element minOccurs="0" maxOccurs="1" name="MarketIndicator" type="tns:MarketIndicator" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:Notification" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PortfolioManager" type="tns:PortfolioManager" />
+        <xs:element minOccurs="0" maxOccurs="1" name="FundPerformance" type="tns:FactSheetPerformance" />
+        <xs:element minOccurs="0" maxOccurs="1" name="SectorAllocation" type="tns:SectorAllocation" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="VendorCode" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Identification">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Number" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ExpiryDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IssueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Country" type="tns:OLifeEnumOfCountryTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IdentificationType" type="tns:OLifeEnumOfIdentificationTypes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfIdentificationTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FundPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="JSECode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FundCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Performance" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Price" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Deviation" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Benchmark" />
+      <xs:enumeration value="Price" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Confirmation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Comment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MarketIndicator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="MarketIndicatorKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MarketIndicatorSysKey" type="tns:SourceLookup" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CloseValue" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AsOfDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DisplayName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tick" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IndicatorGroup" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SourceLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SourceId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SourceType" type="tns:SourceTypes" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SourceTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MDM_Party" />
+      <xs:enumeration value="Compass_IDNumber" />
+      <xs:enumeration value="Compass_NameId" />
+      <xs:enumeration value="Compass_AddressId" />
+      <xs:enumeration value="Compass_FundCode" />
+      <xs:enumeration value="Compass_ContractNumber" />
+      <xs:enumeration value="Compass_BankingKey" />
+      <xs:enumeration value="Compass_PhoneKey" />
+      <xs:enumeration value="Compass_AgentNumber" />
+      <xs:enumeration value="Compass_BrokerageCode" />
+      <xs:enumeration value="KITE_ClientKey" />
+      <xs:enumeration value="KITE_AgentKey" />
+      <xs:enumeration value="KITE_FundKey" />
+      <xs:enumeration value="Silica_EntityNumber" />
+      <xs:enumeration value="Silica_IDNumber" />
+      <xs:enumeration value="Silica_AddressID" />
+      <xs:enumeration value="Silica_AccountNumber" />
+      <xs:enumeration value="Silica_FundCode" />
+      <xs:enumeration value="Silica_BankingKey" />
+      <xs:enumeration value="Silica_DealerCode" />
+      <xs:enumeration value="Fiscus_EntityNumber" />
+      <xs:enumeration value="Fiscus_IDNumber" />
+      <xs:enumeration value="Fiscus_AddressID" />
+      <xs:enumeration value="Fiscus_AccountNumber" />
+      <xs:enumeration value="Fiscus_BankingKey" />
+      <xs:enumeration value="Fiscus_PortfolioNumber" />
+      <xs:enumeration value="Fiscus_PhoneKey" />
+      <xs:enumeration value="SDB_SubscriptionServiceEmailAddress" />
+      <xs:enumeration value="SDB_StanlibId" />
+      <xs:enumeration value="SDB_PartyId" />
+      <xs:enumeration value="SDB_RegionCode" />
+      <xs:enumeration value="Liberty_UACF" />
+      <xs:enumeration value="SAP_EmployeeNumber" />
+      <xs:enumeration value="Network_ID" />
+      <xs:enumeration value="DACS_BrokerCode" />
+      <xs:enumeration value="Liberty_BrokerCode" />
+      <xs:enumeration value="StandardBank_CCode" />
+      <xs:enumeration value="Liberty_ClientID" />
+      <xs:enumeration value="StandardBank_ClientID" />
+      <xs:enumeration value="JSE_FundCode" />
+      <xs:enumeration value="XPLAN_ClientID" />
+      <xs:enumeration value="Micropal_FactSheetCode" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Comment" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ExistingClient" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CurrentAdvisor" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NatureOfQuery" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdviceNeededOn" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortfolioManager">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cv" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FactSheetPerformance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Counter" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CounterTotal" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PricePeriod" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Sequence" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SectorAllocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="InvestmentNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarketSector" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Local" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Foreign" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="JSECode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Total" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Organization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DBA" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrgForm" type="tns:OLifeEnumOfOrganizationTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfOrganizationTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Currency">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrencyKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencySysKey" type="tns:SourceLookup" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrencyTypeCode" type="tns:OLifeEnumOfCurrencyTypes" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IntlSymbol" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrencySymbol" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRates" type="tns:ExchangeRate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExchangeRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ExchangeRateKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRateSysKey" type="tns:SourceLookup" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SourceCurrencyType" type="tns:OLifeEnumOfCurrencyTypes" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConversionFactor" type="xs:float" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AsOfDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KeyedValue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="KeyName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VendorCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KeyValue" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InvestmentProduct">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InvestProductSysKey" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductSymbol" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FullName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Objective" type="tns:OLifeEnumOfObjectives" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CarrierName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SaleEffectiveDate" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FundFamilyName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ShareClass" type="tns:OLifeEnumOfShareClass" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Fee" type="tns:Fee" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InvestProductInfo" type="tns:InvestmentProductInfo" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" type="tns:Attachment" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyedValue" type="tns:KeyedValue" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OLifEExtension" type="tns:OLifEExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfObjectives">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfShareClass">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="InvestmentProductInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OLifeBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="MinDepositAmt" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MaxDepositAmt" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MaxAmt" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MinAmt" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MaxPct" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MinPct" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Fee" type="tns:Fee" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductSymbol" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfRelatedObjectTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OLifeEnumOfRelationshipTypes">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tc" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RelationDescriptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Spouse" />
+      <xs:enumeration value="Child" />
+      <xs:enumeration value="Parent" />
+      <xs:enumeration value="OtherFamily" />
+      <xs:enumeration value="WithoutRelationship" />
+      <xs:enumeration value="Principle" />
+      <xs:enumeration value="SecondLife" />
+      <xs:enumeration value="ThirdLife" />
+      <xs:enumeration value="FirstLifeAssured" />
+      <xs:enumeration value="SecondLifeAssured" />
+      <xs:enumeration value="ThirdLifeAssured" />
+      <xs:enumeration value="FourthLifeAssured" />
+      <xs:enumeration value="FifthLifeAssured" />
+      <xs:enumeration value="Estate" />
+      <xs:enumeration value="Husband" />
+      <xs:enumeration value="Wife" />
+      <xs:enumeration value="Father" />
+      <xs:enumeration value="Mother" />
+      <xs:enumeration value="Son" />
+      <xs:enumeration value="Daughter" />
+      <xs:enumeration value="Brother" />
+      <xs:enumeration value="Sister" />
+      <xs:enumeration value="ExHusband" />
+      <xs:enumeration value="ExWife" />
+      <xs:enumeration value="StepMother" />
+      <xs:enumeration value="StepFather" />
+      <xs:enumeration value="StepSon" />
+      <xs:enumeration value="StepDaughter" />
+      <xs:enumeration value="StepBrother" />
+      <xs:enumeration value="StepSister" />
+      <xs:enumeration value="Grandfather" />
+      <xs:enumeration value="Grandmother" />
+      <xs:enumeration value="Grandson" />
+      <xs:enumeration value="Granddaughter" />
+      <xs:enumeration value="FatherInLaw" />
+      <xs:enumeration value="MotherInLaw" />
+      <xs:enumeration value="SonInLaw" />
+      <xs:enumeration value="DaughterInLaw" />
+      <xs:enumeration value="BrotherInLaw" />
+      <xs:enumeration value="SisterInLaw" />
+      <xs:enumeration value="HalfBrother" />
+      <xs:enumeration value="HalfSister" />
+      <xs:enumeration value="Cousin" />
+      <xs:enumeration value="Uncle" />
+      <xs:enumeration value="Aunt" />
+      <xs:enumeration value="Nephew" />
+      <xs:enumeration value="Niece" />
+      <xs:enumeration value="CommonLawWife" />
+      <xs:enumeration value="CommonLawHusband" />
+      <xs:enumeration value="Self" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

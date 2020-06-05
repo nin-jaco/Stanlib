@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Document" Width="36.0082" Height="249.604" Clip="F1 M 0,0L 36.0082,0L 36.0082,249.604L 0,249.604L 0,0">
+	<Canvas x:Name="Layer_1" Width="33.3409" Height="280.303" Canvas.Left="0" Canvas.Top="0">
+		<Rectangle x:Name="Rectangle" Width="36.0082" Height="249.604" Canvas.Left="0" Canvas.Top="7.7486e-007" Stretch="Fill" StrokeThickness="1.33364" StrokeLineJoin="Round" Stroke="#FF000000">
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="-0.02,0.5" EndPoint="1.02,0.5">
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#FF000000" Offset="0"/>
+						<GradientStop Color="#FF585858" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+	</Canvas>
+</Canvas>

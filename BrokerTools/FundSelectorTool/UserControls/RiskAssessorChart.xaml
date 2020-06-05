@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="FundSelectorTool.UserControls.RiskAssessorChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="640" d:DesignWidth="850">
+    <Grid x:Name="LayoutRoot" Style="{StaticResource UserControlBackground}">
+        <StackPanel Name="stackPanel1" Style="{StaticResource UserControlLayout}">
+            <Grid Name="HeaderArea" Style="{StaticResource Header}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="555" />
+                    <ColumnDefinition Width="295" />
+                </Grid.ColumnDefinitions>
+                <Grid Name="Pagination" Margin="23,25,0,0" Width="296" Grid.Column="1">
+                    <TextBlock Text="1" Style="{StaticResource PaginationBlue}"  />
+                    <Image Style="{StaticResource Bullet}" Source="../Resources/bullet.png" Margin="0,0,0,0" />
+                    <TextBlock Text="2" Style="{StaticResource PaginationGray}" Margin="24,0,0,0" />
+                    <TextBlock Text="3" Style="{StaticResource PaginationGray}" Margin="48,0,0,0" />
+                    <TextBlock Text="A" Style="{StaticResource PaginationGray}" Margin="70,0,0,0" />
+                    <TextBlock Text="B" Style="{StaticResource PaginationGray}" Margin="85,0,0,0" />
+                    <TextBlock Text="C" Style="{StaticResource PaginationGray}" Margin="99,0,0,0" />
+                    <TextBlock Text="4" Style="{StaticResource PaginationGray}" Margin="119,0,0,0" />
+                    <TextBlock Text="5" Style="{StaticResource PaginationGray}" Margin="143,0,0,0" />
+                    <TextBlock Text="A" Style="{StaticResource PaginationGray}" Margin="163,0,0,0" />
+                    <TextBlock Text="B" Style="{StaticResource PaginationGray}" Margin="176,0,0,0" />
+                    <TextBlock Text="6" Style="{StaticResource PaginationGray}" Margin="199,0,0,0" />
+                    <TextBlock Text="7" Style="{StaticResource PaginationGray}" Margin="221,0,0,0" />
+                    <TextBlock Text="8" Style="{StaticResource PaginationGray}" Margin="242,0,0,0" />
+                </Grid>
+            </Grid>
+            <Grid Name="Body" Style="{StaticResource RiskAssessorPage}">
+                <Grid x:Name="TopNavigation" Style="{StaticResource TopNavigation}">
+                    <Button x:Name="CashFlowAnalysisButton" Content="Button"  Style="{StaticResource CashFlowAnalysisButton}" HorizontalAlignment="Right" Width="190" Margin="0,0,-6,0" />
+                    <Button x:Name="RiskAssessorButton" Content="Button"  Style="{StaticResource RiskAssessorButton}" Margin="0,0,159,0" HorizontalAlignment="Right" Width="218" />
+                    <Button x:Name="ComplianceCheckButton" Content="Button"  Style="{StaticResource ComplianceCheckButton}" Margin="307,0,325,0" HorizontalAlignment="Stretch" Width="Auto" />
+                    <Button x:Name="AssetAllocationButton" Content="Button"  Style="{StaticResource AssetAllocationButton}" Margin="140,0,0,0" />
+                    <Button x:Name="LetsGetStartedButton" Content="Button"  Style="{StaticResource LetsGetStartedButton}" />
+                </Grid>
+                <TextBlock Text="RISK" Style="{StaticResource Heading3ALightBlue}" />
+                <TextBlock Text="ASSESSOR" Style="{StaticResource Heading3ADarkBlue}" Margin="130,76,0,0" />
+                <TextBlock Text="CLIENT RISK PROFILE:" Style="{StaticResource Heading5}" Margin="327,90,0,0" />
+                <TextBlock Text="PORTFOLIO RISK:" Style="{StaticResource Heading5}" Margin="597,90,0,0" />
+                <TextBlock Text="FIGURES ARE WORKED OUT IN PERCENTAGES" Style="{StaticResource SmallTextGreen}" Margin="580,115,0,0" Width="143" TextWrapping="Wrap" TextAlignment="Right" />
+                <TextBlock Text="%" Style="{StaticResource SmallTextGreen}" Margin="790,112,0,0" FontSize="30" />
+                <Image Name="imgAggresiveness" Source="../Resources/4.png" Style="{StaticResource AggresiveRatingImage}" />
+                <Image Name="imgRiskProfile" Source="../Resources/1.png" Style="{StaticResource RiskProfileImage}" />
+                <StackPanel Style="{StaticResource BottomButtonBar}">
+                    <Button Name="btnPortfolio" Style="{StaticResource PortFolioButton}" Margin="0,0,0,0" />
+                    <Button Name="btnChart" Style="{StaticResource ChartButton}" Margin="10,0,0,0" />
+                    <Button Name="btnGraph" Style="{StaticResource GraphButton}" Margin="10,0,0,0" />
+                    <Button Name="btnGenerateReport" Style="{StaticResource GenerateReportButton}" Margin="10,0,0,0" />
+                    <Button Name="btnBack" Style="{StaticResource NextButton}" Margin="103,0,0,0" />
+                    <Button Name="btnNext" Style="{StaticResource BackButton}" Margin="20,0,0,0" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <telerik:RadChart Height="330" HorizontalAlignment="Center" Margin="0,240,0,0" Name="radChart1" VerticalAlignment="Top" Width="761" />
+    </Grid>
+</UserControl>

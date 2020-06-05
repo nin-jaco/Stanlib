@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f6b195e-2d0a-464f-80e4-272dcdc0a35f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53877/MockService/FundService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FundService.xsd" MetadataType="Schema" ID="dfc81db4-871a-4751-b7ed-a8095f93a1bd" SourceId="1" SourceUrl="http://localhost:53877/MockService/FundService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WcfFundService.wsdl" MetadataType="Wsdl" ID="170f73a7-31a2-4052-86ca-8b40fe131f22" SourceId="1" SourceUrl="http://localhost:53877/MockService/FundService.svc?wsdl" />
+    <MetadataFile FileName="FundService.disco" MetadataType="Disco" ID="96d5b99b-8289-48e7-a9c5-3361cc988748" SourceId="1" SourceUrl="http://localhost:53877/MockService/FundService.svc?disco" />
+    <MetadataFile FileName="FundService.wsdl" MetadataType="Wsdl" ID="d883bb97-ac4b-479e-98ed-1c07f077fae0" SourceId="1" SourceUrl="http://localhost:53877/MockService/FundService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="FundService1.xsd" MetadataType="Schema" ID="51f35cf3-938e-445e-a54c-84967297f44e" SourceId="1" SourceUrl="http://localhost:53877/MockService/FundService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

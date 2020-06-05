@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="BrokerTools.FundSelector.Views.LetsGetStarted"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             mc:Ignorable="d"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:behaviour="clr-namespace:BrokerTools.SharedUIResources.Behaviour;assembly=BrokerTools.SharedUIResources"
+             xmlns:ViewModel="clr-namespace:BrokerTools.FundSelector.ViewModels"
+             d:DesignHeight="640"
+             d:DesignWidth="850">
+    <UserControl.Resources>
+        <ViewModel:SharedViewModel x:Name="vm" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"
+          Style="{StaticResource FundsAndClientDetailsPage}"
+          DataContext="{Binding Instance, Source={StaticResource vm}}">
+        <TextBlock Name="tbHeading3LightBlue"
+                   Text="LET'S GET"
+                   Style="{StaticResource Heading3LightBlue}" />
+        <TextBlock Name="tbHeading3DarkBlue"
+                   Text="STARTED"
+                   Style="{StaticResource Heading3DarkBlue}" />
+        <TextBlock Name="tbNormalTextBlue"
+                   Margin="46,112,0,0"
+                   Text="Fill in the required fields below"
+                   Style="{StaticResource NormalTextBlue}" />
+        <Grid Style="{StaticResource FundsAndClientBlock}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Name="spTheAdvisor"
+                        Style="{StaticResource TheAdvisorBlock}">
+                <TextBlock Text="The Advisor"
+                           Style="{StaticResource Heading4}"
+                           Margin="10,10,0,0" />
+                <Image Source="/BrokerTools.FundSelector;component/Resources/Images/done.png"
+                       Style="{StaticResource Done}" />
+                <!--<TextBox Name="tbTheAdvisor" Style="{StaticResource Inputs}"/>-->
+                <sdk:AutoCompleteBox Name="tbAdvisorName"
+                                     Style="{StaticResource sdkInputs}"
+                                     ItemsSource="{Binding AdvisorList}"
+                                     SelectedItem="{Binding SelectedAdvisor}"
+                                     BorderBrush="#FFB9B9B6"
+                                     Foreground="#FFB9B9B6">
+                    <sdk:AutoCompleteBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFEDECE9" />
+                            <GradientStop Color="#FFEDECE9"
+                                          Offset="0.191" />
+                            <GradientStop Color="#FFEAE9E6" />
+                            <GradientStop Color="White"
+                                          Offset="0.802" />
+                        </LinearGradientBrush>
+                    </sdk:AutoCompleteBox.Background>
+                    <i:Interaction.Behaviors>
+                        <behaviour:WatermarkAutoComplete Text="Advisor Name"
+                                                         Foreground="#6a6a6a" />
+                    </i:Interaction.Behaviors>
+                </sdk:AutoCompleteBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Name="spTheInvestor"
+                        Style="{StaticResource TheInvestorBlock}">
+                <TextBlock Text="The Investor"
+                           Style="{StaticResource Heading4}"
+                           Margin="10,10,0,0" />
+                <Image Source="/BrokerTools.FundSelector;component/Resources/Images/done.png"
+                       Style="{StaticResource Done}" />
+                <TextBox Name="tbInvestorName"
+                         Style="{StaticResource Inputs}"
+                         Foreground="#FFB9B9B6">
+                    <TextBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9"
+                                          Offset="0" />
+                            <GradientStop Color="#FF8399A9"
+                                          Offset="0.375" />
+                            <GradientStop Color="#FF718597"
+                                          Offset="0.375" />
+                            <GradientStop Color="#FFB9B9B6"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </TextBox.BorderBrush>
+                    <i:Interaction.Behaviors>
+                        <behaviour:Watermark Text="Investor Name"
+                                             Foreground="#6a6a6a" />
+                    </i:Interaction.Behaviors>
+                </TextBox>
+                <TextBox Name="tbPortfolioNumber"
+                         Style="{StaticResource Inputs}"
+                         Foreground="#FFB9B9B6">
+                    <TextBox.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9"
+                                          Offset="0" />
+                            <GradientStop Color="#FF8399A9"
+                                          Offset="0.375" />
+                            <GradientStop Color="#FF718597"
+                                          Offset="0.375" />
+                            <GradientStop Color="#FFB9B9B6"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </TextBox.BorderBrush>
+                    <i:Interaction.Behaviors>
+                        <behaviour:Watermark Text="Portfolio Number"
+                                             Foreground="#6a6a6a" />
+                    </i:Interaction.Behaviors>
+                </TextBox>
+
+                <ComboBox Name="cbInvestorInput3"
+                          Style="{StaticResource Combos}"
+                          ItemsSource="{Binding SelectedInvestmentTerm}"
+                          SelectedItem="{Binding InvestmentTermList}">
+                    <i:Interaction.Behaviors>
+                        <behaviour:WatermarkCombo Text="Client Risk Profile"
+                                                  Foreground="#6a6a6a" />
+                    </i:Interaction.Behaviors>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="2"
+                        Name="TheInvestment"
+                        Style="{StaticResource TheInvestmentBlock}">
+                <TextBlock Text="The Investment"
+                           Style="{StaticResource Heading4}"
+                           Margin="10,10,0,0" />
+                <Image Source="/BrokerTools.FundSelector;component/Resources/Images/done.png"
+                       Style="{StaticResource Done}" />
+                <ComboBox Name="cbTheInvestmentInput1"
+                          Style="{StaticResource Combos}"
+                          ItemsSource="{Binding SelectedProduct}"
+                          SelectedItem="{Binding ProductList}" />
+                <TextBox Name="tbTheInvestmentInput2"
+                         Style="{StaticResource Inputs}"
+                         Foreground="#FFB9B9B6" />
+                <TextBox Name="tbTheInvestmentInput3"
+                         Style="{StaticResource Inputs}" />
+                <TextBox Name="tbTheInvestmentInput4"
+                         Style="{StaticResource Inputs}" />
+                <ComboBox Name="cbTheInvestmentInput5"
+                          Style="{StaticResource Combos}" />
+                <TextBox Name="tbTheInvestmentInput6"
+                         Style="{StaticResource Inputs}" />
+                <TextBox Name="tbTheInvestmentInput7"
+                         Style="{StaticResource Inputs}" />
+            </StackPanel>
+        </Grid>
+
+        <Button Name="btnBack"
+                Style="{StaticResource NextButton}"
+                Margin="612,538,0,0" />
+        <Button Name="btnNext"
+                Style="{StaticResource BackButton}"
+                Margin="719,538,0,0" />
+    </Grid>
+
+</UserControl>

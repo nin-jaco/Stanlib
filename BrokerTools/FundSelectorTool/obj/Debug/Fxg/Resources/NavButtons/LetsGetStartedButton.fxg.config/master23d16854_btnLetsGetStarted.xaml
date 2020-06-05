@@ -1,0 +1,27 @@
+﻿<UserControl xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:nineGrid="clr-namespace:Microsoft.Expression.Controls.Fxg;assembly=Microsoft.Expression.Controls.Fxg" xmlns:local="clr-namespace:FundSelectorTool.Resources.NavButtons.LetsGetStartedButton;assembly=FundSelectorTool" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Viewbox UseLayoutRounding="false">
+    <Canvas Width="189" Height="53">
+      <Canvas Width="189" Height="44">
+        <Canvas Width="189" Height="44">
+          <Image Source="/LetsGetStartedButton.assets/Image_0.png" Width="189" Height="44" Stretch="Fill" />
+          <Image Canvas.Left="4" Canvas.Top="6" Source="/LetsGetStartedButton.assets/Image_1.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="35" Canvas.Top="20" Source="/LetsGetStartedButton.assets/Image_2.png" Width="119" Height="8" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Width="189" Height="53">
+        <Canvas Width="189" Height="53">
+          <Image Source="/LetsGetStartedButton.assets/Image_3.png" Width="189" Height="44" Stretch="Fill" />
+          <Image Canvas.Left="2" Canvas.Top="4" Source="/LetsGetStartedButton.assets/Image_4.png" Width="182" Height="49" Stretch="Fill" />
+          <Image Canvas.Left="4" Canvas.Top="6" Source="/LetsGetStartedButton.assets/Image_5.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="35" Canvas.Top="20" Source="/LetsGetStartedButton.assets/Image_6.png" Width="119" Height="8" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Canvas.Left="95" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+      <Canvas Canvas.Left="95" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>

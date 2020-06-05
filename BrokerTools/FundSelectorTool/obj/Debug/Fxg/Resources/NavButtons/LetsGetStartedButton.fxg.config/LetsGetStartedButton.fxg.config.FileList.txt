@@ -1,0 +1,3 @@
+XAML:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\LetsGetStartedButton.fxg.config\master23d16854_btnLetsGetStarted.xaml
+Code:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\LetsGetStartedButton.fxg.config\master23d16854_btnLetsGetStarted.g.cs
+Code:C:\Users\jaco.kleynhans\Documents\Visual Studio 2008\Projects\Current Projects\Stanlib\BrokerTools\FundSelectorTool\obj\Debug\Fxg\Resources\NavButtons\LetsGetStartedButton.fxg.config\LetsGetStartedButtonAssemblyInfo.cs

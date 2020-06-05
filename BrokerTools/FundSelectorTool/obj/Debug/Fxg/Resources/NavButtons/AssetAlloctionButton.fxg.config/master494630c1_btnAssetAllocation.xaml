@@ -1,0 +1,27 @@
+﻿<UserControl xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:nineGrid="clr-namespace:Microsoft.Expression.Controls.Fxg;assembly=Microsoft.Expression.Controls.Fxg" xmlns:local="clr-namespace:FundSelectorTool.Resources.NavButtons.AssetAlloctionButton;assembly=FundSelectorTool" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Viewbox UseLayoutRounding="false">
+    <Canvas Width="216" Height="53">
+      <Canvas Width="189" Height="44" Canvas.Left="27">
+        <Canvas Width="189" Height="44">
+          <Image Source="/AssetAlloctionButton.assets/Image_0.png" Width="189" Height="44" Stretch="Fill" />
+          <Image Canvas.Left="3" Canvas.Top="6" Source="/AssetAlloctionButton.assets/Image_1.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="37" Canvas.Top="19" Source="/AssetAlloctionButton.assets/Image_2.png" Width="112" Height="8" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Width="216" Height="53">
+        <Canvas Width="216" Height="53">
+          <Image Canvas.Left="27" Source="/AssetAlloctionButton.assets/Image_3.png" Width="189" Height="44" Stretch="Fill" />
+          <Image Canvas.Top="4" Source="/AssetAlloctionButton.assets/Image_4.png" Width="211" Height="49" Stretch="Fill" />
+          <Image Canvas.Left="30" Canvas.Top="6" Source="/AssetAlloctionButton.assets/Image_5.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="64" Canvas.Top="19" Source="/AssetAlloctionButton.assets/Image_6.png" Width="112" Height="8" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Canvas.Left="108" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+      <Canvas Canvas.Left="108" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>

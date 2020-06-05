@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IFundService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ISecurityService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:53877/MockService/FundService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFundService"
+                contract="FundProxy.IFundService" name="BasicHttpBinding_IFundService" />
+            <endpoint address="http://localhost:53877/MockService/SecurityService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISecurityService"
+                contract="SecurityProxy.ISecurityService" name="BasicHttpBinding_ISecurityService" />
+        </client>
+    </system.serviceModel>
+</configuration>

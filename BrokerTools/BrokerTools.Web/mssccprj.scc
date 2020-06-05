@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[BrokerTools.Web.csproj]
+SCC_Aux_Path="\\britton1\sourcesafe"
+SCC_Project_Name="$/Current Projects/Stanlib/BrokerTools/BrokerTools.Web", RCBGAAAA

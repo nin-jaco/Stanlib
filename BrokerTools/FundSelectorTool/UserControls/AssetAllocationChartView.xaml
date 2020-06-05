@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="FundSelectorTool.UserControls.AssetAllocationChartView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="640" d:DesignWidth="850" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot" Style="{StaticResource UserControlBackground}">
+        <StackPanel Name="stackPanel1" Style="{StaticResource UserControlLayout}">
+            <Grid Name="HeaderArea" Style="{StaticResource Header}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="555" />
+                    <ColumnDefinition Width="295" />
+                </Grid.ColumnDefinitions>
+                <Grid Name="Pagination" Margin="23,25,0,0" Width="296" Grid.Column="1">
+                    <TextBlock Text="1" Style="{StaticResource PaginationBlue}"  />
+                    <Image Style="{StaticResource Bullet}" Source="../Resources/bullet.png" Margin="0,0,0,0" />
+                    <TextBlock Text="2" Style="{StaticResource PaginationGray}" Margin="24,0,0,0" />
+                    <TextBlock Text="3" Style="{StaticResource PaginationGray}" Margin="48,0,0,0" />
+                    <TextBlock Text="A" Style="{StaticResource PaginationGray}" Margin="70,0,0,0" />
+                    <TextBlock Text="B" Style="{StaticResource PaginationGray}" Margin="85,0,0,0" />
+                    <TextBlock Text="C" Style="{StaticResource PaginationGray}" Margin="99,0,0,0" />
+                    <TextBlock Text="4" Style="{StaticResource PaginationGray}" Margin="119,0,0,0" />
+                    <TextBlock Text="5" Style="{StaticResource PaginationGray}" Margin="143,0,0,0" />
+                    <TextBlock Text="A" Style="{StaticResource PaginationGray}" Margin="163,0,0,0" />
+                    <TextBlock Text="B" Style="{StaticResource PaginationGray}" Margin="176,0,0,0" />
+                    <TextBlock Text="6" Style="{StaticResource PaginationGray}" Margin="199,0,0,0" />
+                    <TextBlock Text="7" Style="{StaticResource PaginationGray}" Margin="221,0,0,0" />
+                    <TextBlock Text="8" Style="{StaticResource PaginationGray}" Margin="242,0,0,0" />
+                </Grid>
+            </Grid>
+            <Grid Name="Body" Style="{StaticResource AssetAllocationPage}">
+                <Grid x:Name="TopNavigation" Style="{StaticResource TopNavigation}">
+                    <Button x:Name="CashFlowAnalysisButton" Content="Button"  Style="{StaticResource CashFlowAnalysisButton}" HorizontalAlignment="Right" Width="190" Margin="0,0,-6,0" />
+                    <Button x:Name="RiskAssessorButton" Content="Button"  Style="{StaticResource RiskAssessorButton}" Margin="0,0,159,0" HorizontalAlignment="Right" Width="218" />
+                    <Button x:Name="ComplianceCheckButton" Content="Button"  Style="{StaticResource ComplianceCheckButton}" Margin="307,0,325,0" HorizontalAlignment="Stretch" Width="Auto" />
+                    <Button x:Name="AssetAllocationButton" Content="Button"  Style="{StaticResource AssetAllocationButton}" Margin="140,0,0,0" />
+                    <Button x:Name="LetsGetStartedButton" Content="Button"  Style="{StaticResource LetsGetStartedButton}" />
+                </Grid>
+                <TextBlock Text="ASSET ALLOCATION:" Style="{StaticResource Heading3ALightBlue}" />
+                <TextBlock Text="CHART VIEW" Style="{StaticResource Heading3ADarkBlue}" Margin="390,76,0,0" />
+                <TextBlock Margin="46,115,0,0" Text="Let's do the math. Fill in the fields below for the results" Style="{StaticResource NormalTextBlueA}" />
+                <TextBlock Margin="46,150,0,0" Text="Investec Managed" Style="{StaticResource Heading2Alt}" />
+                <TextBlock Text="FIGURES ARE WORKED OUT IN PERCENTAGES" Style="{StaticResource SmallTextGreen}" Margin="580,115,0,0" Width="143" TextWrapping="Wrap" TextAlignment="Right" />
+                <TextBlock Text="%" Style="{StaticResource SmallTextGreen}" Margin="790,112,0,0" FontSize="30" />
+                <Grid Width="750" Height="330" Margin="0,170,0,0" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Margin="0,0,0,0" Text="ASSET ALLOCATION" Style="{StaticResource NormalTextGray}" />
+                        <telerik:RadChart Name="Chart" Style="{StaticResource PieChartStyle}">
+                            <telerik:RadChart.PaletteBrushes>
+                                <SolidColorBrush Color="#D1E8F2" />
+                                <SolidColorBrush Color="#BADAEA" />
+                                <SolidColorBrush Color="#7FC1D9" />
+                                <SolidColorBrush Color="#2AA5BF" />
+                                <SolidColorBrush Color="#126274" />
+                            </telerik:RadChart.PaletteBrushes>
+                            <telerik:RadChart.DefaultView>
+                                <telerik:ChartDefaultView>
+                                    <telerik:ChartDefaultView.ChartLegend>
+                                        <telerik:ChartLegend x:Name="ChartLegend" />
+                                    </telerik:ChartDefaultView.ChartLegend>
+                                    <telerik:ChartDefaultView.ChartArea>
+                                        <telerik:ChartArea Name="ChartArea" LegendName="ChartLegend"  >
+                                            <telerik:ChartArea.DataSeries>
+                                                <telerik:DataSeries>
+                                                    <telerik:DataSeries.Definition>
+                                                        <telerik:PieSeriesDefinition ItemLabelFormat="#%{P2}" />
+                                                    </telerik:DataSeries.Definition>
+                                                    <telerik:DataPoint YValue="10" LegendLabel="EQUITY" />
+                                                    <telerik:DataPoint YValue="10" LegendLabel="PROPERTY" Label="" />
+                                                    <telerik:DataPoint YValue="10" LegendLabel="BONDS" />
+                                                    <telerik:DataPoint YValue="10" LegendLabel="CASH" />
+                                                    <telerik:DataPoint YValue="10" LegendLabel="FOREIGN" />
+                                                </telerik:DataSeries>
+                                            </telerik:ChartArea.DataSeries>
+                                        </telerik:ChartArea>
+                                    </telerik:ChartDefaultView.ChartArea>
+                                </telerik:ChartDefaultView>
+                            </telerik:RadChart.DefaultView>
+                        </telerik:RadChart>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Margin="0,0,0,0" Text="SELECTOR ALLOCATION" Style="{StaticResource NormalTextGray}" />
+                        <telerik:RadChart Height="250" Name="radChart2" Width="250" Margin="0,20,0,0"  />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Margin="0,0,0,0" Text="ASSET ALLOCATION" Style="{StaticResource NormalTextGray}" />
+                        <telerik:RadChart Height="250" Name="radChart3" Width="250" Margin="0,20,0,0"  />
+                    </StackPanel>
+                </Grid>
+                <StackPanel Style="{StaticResource BottomButtonBar}">
+                    <Button Name="btnTableView" Style="{StaticResource TableViewButton}" Margin="0,0,0,0" />
+                    <Button Name="btnChartView" Style="{StaticResource ChartViewButton}" Margin="10,0,0,0" />
+                    <Button Name="btnGenerateReport" Style="{StaticResource GenerateReportButton}" Margin="10,0,0,0" />
+                    <Button Name="btnBack" Style="{StaticResource NextButton}" Margin="146,0,0,0" />
+                    <Button Name="btnNext" Style="{StaticResource BackButton}" Margin="20,0,0,0" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

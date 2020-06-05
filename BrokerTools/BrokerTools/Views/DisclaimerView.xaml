@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="BrokerTools.Views.DisclaimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             DataContext="{Binding Models.ShellViewModel, Source={StaticResource ViewModelController}}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="WelcomeTitleStyle"
+                   BasedOn="{StaticResource DefaultLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="40" />
+                <Setter Property="FontWeight"
+                        Value="Bold" />
+                <Setter Property="Margin"
+                        Value="0,30,0,14" />
+            </Style>
+            <Style x:Key="WelcomeSubTitleStyle"
+                   BasedOn="{StaticResource DefaultLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="20" />
+                <Setter Property="FontWeight"
+                        Value="Bold" />
+                <Setter Property="Foreground"
+                        Value="{StaticResource LightBlueBrush}" />
+                <Setter Property="Margin"
+                        Value="0,0,0,20" />
+            </Style>
+            <Style x:Key="WelcomeTextStyle"
+                   BasedOn="{StaticResource DefaultLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="14" />
+            </Style>
+            <Style x:Key="ConfirmDisclaimerStyle"
+                   BasedOn="{StaticResource DefaultLabelStyle}"
+                   TargetType="TextBlock">
+                <Setter Property="FontSize"
+                        Value="12" />
+                <Setter Property="Margin"
+                        Value="4,0,0,13" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Border CornerRadius="5"
+                BorderBrush="#FF000000"
+                BorderThickness="1"
+                Padding="20">
+            <Border.Background>
+                <ImageBrush Stretch="Fill"
+                            ImageSource="../Resources/Images/LandingBG.jpg" />
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="WELCOME"
+                               Style="{StaticResource WelcomeTitleStyle}" />
+                    <TextBlock Text="to the STANLIB fund selector tool kit."
+                               Grid.Row="1"
+                               Style="{StaticResource WelcomeSubTitleStyle}" />
+                    <TextBlock Text="STANLIB provides a fund selection tool and calculator for convenience. STANLIB gives no warranty, expressed or implied, as to the accuracy, reliability, completeness, suitability or potential value of any information, formulae or calculations provided through the use of the  fund selection tool and calculator, or that any outcome that may suggested as a result of the use of the calculators are appropriate to the particular investment objectives or needs of any existing or prospective client. Potential and existing investors are advised to seek independent advice from an authorised financial adviser in this regard."
+                               TextWrapping="Wrap"
+                               Grid.Row="2"
+                               Style="{StaticResource WelcomeTextStyle}"
+                               MaxWidth="380"
+                               HorizontalAlignment="Left" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="I confirm that I have read and understood the above disclaimer"
+                               Style="{StaticResource ConfirmDisclaimerStyle}" />
+                    <StackPanel Grid.Row="1"
+                                Orientation="Horizontal">
+                        <!--<Button Width="156"
+                                Height="44"
+                                Style="{StaticResource ImageButtonStyle}"
+                                Margin="15,0,15,0"
+                                Command="{Binding DeclineDisclaimerCommand}">
+                            <Canvas Width="156"
+                                    Height="44">
+                                <Image Source="../Resources/Images/DeclineButton.png"
+                                       Stretch="Fill"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       UseLayoutRounding="False" />
+                            </Canvas>
+                        </Button>-->
+                        <Button Width="156"
+                                Height="44"
+                                Margin="15,0,15,0"
+                                Style="{StaticResource NoButtonStyle}"
+                                Command="{Binding AcceptDisclaimerCommand}"
+                                Content="DECLINE" />
+                        
+                        <Button Width="156"
+                                Height="44"
+                                Style="{StaticResource YesButtonStyle}"
+                                Command="{Binding AcceptDisclaimerCommand}"
+                                Content="I ACCEPT" />
+                        <!--<Button Width="156"
+                                Height="44"
+                                Style="{StaticResource ImageButtonStyle}"
+                                Command="{Binding AcceptDisclaimerCommand}">
+                            <Canvas Width="156"
+                                    Height="44">
+                                <Image Source="../Resources/Images/AcceptButton.png"
+                                       Stretch="Fill"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       UseLayoutRounding="False" />
+                            </Canvas>
+                        </Button>-->
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

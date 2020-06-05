@@ -1,0 +1,29 @@
+﻿<UserControl xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:nineGrid="clr-namespace:Microsoft.Expression.Controls.Fxg;assembly=Microsoft.Expression.Controls.Fxg" xmlns:local="clr-namespace:FundSelectorTool.Resources.NavButtons.CashFlowAnalysisButton;assembly=FundSelectorTool" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <Viewbox UseLayoutRounding="false">
+    <Canvas Width="190" Height="53">
+      <Canvas Width="190" Height="44">
+        <Canvas Width="190" Height="44">
+          <Image Source="/CashFlowAnalysisButton.assets/Image_0.png" Width="190" Height="44" Stretch="Fill" />
+          <Image Canvas.Left="6" Canvas.Top="6" Source="/CashFlowAnalysisButton.assets/Image_1.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="51" Canvas.Top="20" Source="/CashFlowAnalysisButton.assets/Image_2.png" Width="92" Height="10" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Width="190" Height="53">
+        <Canvas Width="190" Height="53">
+          <Image Source="/CashFlowAnalysisButton.assets/Image_3.png" Width="190" Height="44" Stretch="Fill" />
+          <Image Canvas.Left="6" Canvas.Top="6" Source="/CashFlowAnalysisButton.assets/Image_4.png" Width="178" Height="25" Stretch="Fill" />
+          <Image Canvas.Left="2" Canvas.Top="4" Source="/CashFlowAnalysisButton.assets/Image_5.png" Width="182" Height="49" Stretch="Fill" />
+          <Image Canvas.Left="2" Canvas.Top="4" Source="/CashFlowAnalysisButton.assets/Image_6.png" Width="35" Height="39" Stretch="Fill" />
+          <Image Canvas.Left="26" Canvas.Top="4" Source="/CashFlowAnalysisButton.assets/Image_7.png" Width="11" Height="39" Stretch="Fill" />
+          <Image Canvas.Left="51" Canvas.Top="20" Source="/CashFlowAnalysisButton.assets/Image_8.png" Width="92" Height="10" Stretch="Fill" />
+        </Canvas>
+      </Canvas>
+      <Canvas Canvas.Left="95" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+      <Canvas Canvas.Left="95" Canvas.Top="27">
+        <Canvas />
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>

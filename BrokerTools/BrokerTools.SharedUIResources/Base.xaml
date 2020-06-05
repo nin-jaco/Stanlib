@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml" />
+        <ResourceDictionary Source="ImplicitControlStyles/Labels.xaml" />
+        <ResourceDictionary Source="ImplicitControlStyles/Buttons.xaml" />
+        <ResourceDictionary Source="ImplicitControlStyles/TextBox.xaml" />
+        <ResourceDictionary Source="ImplicitControlStyles/ComboBox.xaml" />
+        <ResourceDictionary Source="ExplicitControlStyles/RadSlider.xaml" />
+        <ResourceDictionary Source="ExplicitControlStyles/FinancialTextBox.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

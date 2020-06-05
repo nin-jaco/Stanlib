@@ -1,0 +1,116 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundSelectorTool", "FundSelectorTool\FundSelectorTool.csproj", "{31037457-DCB2-426D-8FB0-970D7EE3AE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools.Web", "BrokerTools.Web\BrokerTools.Web.csproj", "{29AF5945-EF95-4082-9D4C-32B501CB4BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools", "BrokerTools\BrokerTools.csproj", "{E5B9431C-F381-41A6-A17C-C8F250A12E25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Data", "Application Data", "{DE2F04F8-FA21-41AF-B6C3-CDA429D9DF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools.Data", "BrokerTools.Data\BrokerTools.Data.csproj", "{91CE45A9-E6C9-4CD7-928A-8DE326F63020}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3} = {29AF5945-EF95-4082-9D4C-32B501CB4BF3}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Shell", "Application Shell", "{28B9E6EA-D13C-4BC5-BEF7-1BF742401964}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Server", "Application Server", "{03C690FE-58F2-4256-A1D8-D1F8E7CCDA1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Modules", "Application Modules", "{D84E69E0-368E-45AF-B3A1-63EE9B6A1AF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fund Selector", "Fund Selector", "{F36912D6-4D35-4528-9607-F05A766EB2B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Common", "Application Common", "{A8DACB91-3B5D-48DA-AA43-16D8C0C1D4AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools.Base", "BrokerTools.Base\BrokerTools.Base.csproj", "{D1982BB6-2F4B-409C-86E9-D572D22E9CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools.SharedUIResources", "BrokerTools.SharedUIResources\BrokerTools.SharedUIResources.csproj", "{DC8C8ADF-E568-401D-A6CC-2C40073B6108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerTools.FundSelector", "BrokerTools.FundSelector\BrokerTools.FundSelector.csproj", "{61F437E2-1B2C-4F6A-953D-876B62905D27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Testing", "Application Testing", "{60EE61BF-E7F1-43C2-82DF-475A12B931F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight Tests", "Silverlight Tests", "{5645BF8A-79F8-452D-AE58-2381BDA20115}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 8
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BrokerTools.Web\\BrokerTools.Web.csproj
+		SccProjectTopLevelParentUniqueName1 = BrokerTools.sln
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = BrokerTools.Web\\
+		SccProjectUniqueName2 = FundSelectorTool\\FundSelectorTool.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = FundSelectorTool\\
+		SccProjectUniqueName3 = BrokerTools\\BrokerTools.csproj
+		SccProjectTopLevelParentUniqueName3 = BrokerTools.sln
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = BrokerTools\\
+		SccProjectUniqueName4 = BrokerTools.SharedUIResources\\BrokerTools.SharedUIResources.csproj
+		SccProjectTopLevelParentUniqueName4 = BrokerTools.sln
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = BrokerTools.SharedUIResources\\
+		SccProjectUniqueName5 = BrokerTools.Base\\BrokerTools.Base.csproj
+		SccProjectTopLevelParentUniqueName5 = BrokerTools.sln
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = BrokerTools.Base\\
+		SccProjectUniqueName6 = BrokerTools.Data\\BrokerTools.Data.csproj
+		SccProjectTopLevelParentUniqueName6 = BrokerTools.sln
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = BrokerTools.Data\\
+		SccProjectUniqueName7 = BrokerTools.FundSelector\\BrokerTools.FundSelector.csproj
+		SccProjectTopLevelParentUniqueName7 = BrokerTools.sln
+		SccLocalPath7 = .
+		SccProjectFilePathRelativizedFromConnection7 = BrokerTools.FundSelector\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31037457-DCB2-426D-8FB0-970D7EE3AE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31037457-DCB2-426D-8FB0-970D7EE3AE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31037457-DCB2-426D-8FB0-970D7EE3AE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31037457-DCB2-426D-8FB0-970D7EE3AE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B9431C-F381-41A6-A17C-C8F250A12E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B9431C-F381-41A6-A17C-C8F250A12E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B9431C-F381-41A6-A17C-C8F250A12E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B9431C-F381-41A6-A17C-C8F250A12E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91CE45A9-E6C9-4CD7-928A-8DE326F63020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91CE45A9-E6C9-4CD7-928A-8DE326F63020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91CE45A9-E6C9-4CD7-928A-8DE326F63020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91CE45A9-E6C9-4CD7-928A-8DE326F63020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1982BB6-2F4B-409C-86E9-D572D22E9CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1982BB6-2F4B-409C-86E9-D572D22E9CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1982BB6-2F4B-409C-86E9-D572D22E9CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1982BB6-2F4B-409C-86E9-D572D22E9CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8C8ADF-E568-401D-A6CC-2C40073B6108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8C8ADF-E568-401D-A6CC-2C40073B6108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8C8ADF-E568-401D-A6CC-2C40073B6108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8C8ADF-E568-401D-A6CC-2C40073B6108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F437E2-1B2C-4F6A-953D-876B62905D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F437E2-1B2C-4F6A-953D-876B62905D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F437E2-1B2C-4F6A-953D-876B62905D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F437E2-1B2C-4F6A-953D-876B62905D27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29AF5945-EF95-4082-9D4C-32B501CB4BF3} = {03C690FE-58F2-4256-A1D8-D1F8E7CCDA1A}
+		{E5B9431C-F381-41A6-A17C-C8F250A12E25} = {28B9E6EA-D13C-4BC5-BEF7-1BF742401964}
+		{91CE45A9-E6C9-4CD7-928A-8DE326F63020} = {DE2F04F8-FA21-41AF-B6C3-CDA429D9DF09}
+		{F36912D6-4D35-4528-9607-F05A766EB2B4} = {D84E69E0-368E-45AF-B3A1-63EE9B6A1AF8}
+		{61F437E2-1B2C-4F6A-953D-876B62905D27} = {F36912D6-4D35-4528-9607-F05A766EB2B4}
+		{D1982BB6-2F4B-409C-86E9-D572D22E9CA4} = {A8DACB91-3B5D-48DA-AA43-16D8C0C1D4AE}
+		{DC8C8ADF-E568-401D-A6CC-2C40073B6108} = {A8DACB91-3B5D-48DA-AA43-16D8C0C1D4AE}
+		{5645BF8A-79F8-452D-AE58-2381BDA20115} = {60EE61BF-E7F1-43C2-82DF-475A12B931F9}
+	EndGlobalSection
+EndGlobal

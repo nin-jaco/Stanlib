@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53877/MockService/FundService.svc?xsd=xsd1" namespace="http://ACORD.org/Standards/Life/2" />
+  <xs:element name="GetFunds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="productCode" type="tns:ProductCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ProductCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="UT" />
+      <xs:enumeration value="LLA" />
+      <xs:enumeration value="PPP" />
+      <xs:enumeration value="IP" />
+      <xs:enumeration value="GIP" />
+      <xs:enumeration value="PPR" />
+      <xs:enumeration value="MVI" />
+      <xs:enumeration value="MGP" />
+      <xs:enumeration value="MVC" />
+      <xs:enumeration value="RA" />
+      <xs:enumeration value="SML" />
+      <xs:enumeration value="ELLA" />
+      <xs:enumeration value="DIP" />
+      <xs:enumeration value="SBLIS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GetFundsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://ACORD.org/Standards/Life/2" minOccurs="0" maxOccurs="1" name="GetFundsResult" type="q1:OLife" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FundPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="JSECode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FundCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Performance" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Price" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Deviation" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Benchmark" />
+      <xs:enumeration value="Price" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SectorAllocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="InvestmentNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarketSector" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Local" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="Foreign" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="JSECode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Total" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFund">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://ACORD.org/Standards/Life/2" minOccurs="0" maxOccurs="1" name="sourceLookup" type="q2:SourceLookup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://ACORD.org/Standards/Life/2" minOccurs="0" maxOccurs="1" name="GetFundResult" type="q3:OLife" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
